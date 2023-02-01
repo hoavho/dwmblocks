@@ -1,5 +1,5 @@
 /* macro for conveniently specifying pathu and pathc below */
-#define PATH(name)                      "<path to the folder containing block scripts>/"name
+#define PATH(name)                      "/opt/dwmblocks/blocks/"name
 
 /* buffer size for capturing output of the programs used for updating blocks */
 #define CMDOUTLENGTH                    50
@@ -17,7 +17,7 @@
 
 /* delimiter specified as an array of characters
  * (don't remove DELIMITERENDCHAR at the end) */
-static const char delimiter[] = { ' ', ' ', ' ', DELIMITERENDCHAR };
+static const char delimiter[] = { ' ', DELIMITERENDCHAR };
 
 #include "block.h"
 
@@ -44,8 +44,8 @@ static const char delimiter[] = { ' ', ' ', ' ', DELIMITERENDCHAR };
 /*        { PATH("volume.sh"),            PATH("volume_button.sh"),       0,              2}, */
 static Block blocks[] = {
 /*      pathu                           pathc                           interval        signal */
-        { PATH("cpu_temp.sh"),          PATH("cpu_temp_button.sh"),     1,              4},
-        { PATH("battery.sh"),           PATH("battery_button.sh"),      30,             3},
+        { PATH("sb-cpu.sh"),            PATH("cpu_temp_button.sh"),     1,              1},
+        { PATH("sb-battery-v2.sh"),        PATH("battery_button.sh"),      30,             3},
         { PATH("calendar.sh"),          NULL,                           30,             1},
         { NULL } /* just to mark the end of the array */
 };
