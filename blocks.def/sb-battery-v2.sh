@@ -35,7 +35,7 @@ for battery in /sys/class/power_supply/BAT?*; do
 	#capacity="$(cat "$battery/capacity" 2>&1)"
 	# So We'll calculate capacity in different way = capacity_now / capacity_full
 	charge_current="$(cat "$battery/charge_now")"
-	charge_full="$(cat "$battery/charge_now")"
+	charge_full="$(cat "$battery/charge_full")"
 	let "capacity=100*$charge_current/$charge_full"
 
 	# Will make a warn variable if discharging and low
