@@ -41,11 +41,22 @@ static const char delimiter[] = { ' ', DELIMITERENDCHAR };
 #define INTERVALs                       1
 #define INTERVALn                       0
 
+/* !! Notes
+ * signal = is used by dwmblocks to determine which pathc to trigger -> so you have to make them unique
+ * e.g. if you set both pathu "sb-cpu-usage.sh" and pathu "sb-ram-usage.sh" with signal 2
+ * when you click on either of them, both buttons will be trigger (because they both having same value)
+ *
+ * HOWEVER, this signal is NOT what is sent/provided to your pathc script
+ * -> the parameter sent to your script is dwm signal value (1 = left mouse click - Button1, 2 = middle mouse click - Button2, 3 = right click - Button3)
+ * -> so in your pathc .sh script, you should handle dwm signal value (1,2 or 3) instead (to respond differently for differnt button click)
+
 /*        { PATH("volume.sh"),            PATH("volume_button.sh"),       0,              2}, */
 static Block blocks[] = {
 /*      pathu                           pathc                           interval        signal */
-        { PATH("sb-cpu.sh"),            PATH("cpu_temp_button.sh"),     1,              1},
-        { PATH("sb-battery-v2.sh"),        PATH("battery_button.sh"),      30,             3},
-        { PATH("calendar.sh"),          NULL,                           30,             1},
+        { PATH("sb-cpu-usage.sh"),      PATH("cpu_usage_button.sh"),	15,             1},
+        { PATH("sb-ram-usage.sh"),      PATH("ram_usage_button.sh"),   	15,             2},
+        { PATH("sb-cpu-temp.sh"),       PATH("cpu_temp_button.sh"),     1,              3},
+        { PATH("sb-battery-v2.sh"),     PATH("battery_button.sh"),      30,             4},
+        { PATH("calendar.sh"),          NULL,                           30,             5},
         { NULL } /* just to mark the end of the array */
 };
