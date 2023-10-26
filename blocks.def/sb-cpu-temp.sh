@@ -32,4 +32,4 @@ esac
 # 19. \x1d == 29
 # 20. \x1e == 30
 # 21. \x1f == 31
-sensors | awk '/Core 0/ {print "\x10 🌡" $3}'
+sensors | awk '/Core 0/ {print "\x10🌡" $3}'

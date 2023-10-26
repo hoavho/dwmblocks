@@ -38,7 +38,7 @@ free_mem=${PARTS[0]}
 available_mem=${PARTS[1]}
 total_mem=${PARTS[2]}
 
-printf "\x10 RAM:%s%%/%s%%\n" $(((total_mem-free_mem)*100/total_mem)) $((available_mem*100/total_mem))
+printf "\x10RAM:%s%%/%s%%\n" $(((total_mem-free_mem)*100/total_mem)) $((available_mem*100/total_mem))
 
 #awk '/MemTotal:/{total=$2} \
 #     /MemFree:/{free=$2} \

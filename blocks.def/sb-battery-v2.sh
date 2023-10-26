@@ -46,13 +46,13 @@ for battery in /sys/class/power_supply/BAT?*; do
 	if [[ "$status" = "🔋" ]] && [ "$capacity" -le 10 ] 
 	then
 	    # critical
-	    printf "\x12 %s%s%d%%" "$status" "$warn" "$capacity"; unset warn
+	    printf "\x12%s%s%d%%" "$status" "$warn" "$capacity"; unset warn
 	elif [[ "$status" = "🔋" ]] && [ "$capacity" -le 25 ] 
 	then
 	    # warning
-	    printf "\x11 %s%s%d%%" "$status" "$warn" "$capacity"; unset warn
+	    printf "\x11%s%s%d%%" "$status" "$warn" "$capacity"; unset warn
 	else
 	    # normal
-	    printf "\x0f %s%s%d%%" "$status" "$warn" "$capacity"; unset warn
+	    printf "\x0f%s%s%d%%" "$status" "$warn" "$capacity"; unset warn
 	fi
 done && printf "\\n"

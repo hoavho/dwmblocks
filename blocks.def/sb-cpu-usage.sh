@@ -23,4 +23,4 @@
 # 19. \x1d == 29
 # 20. \x1e == 30
 # 21. \x1f == 31
-top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print "\x10 CPU:" 100 - $1"%"}'
+top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print "\x10CPU:" 100 - $1"%"}'
